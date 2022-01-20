@@ -1,0 +1,9 @@
+
+<h1>Upcoming Gigs for <%= Time.now.year %></h1>
+<% @gigs.each do |gig| %>
+  <ul>
+    <h4>Date: <%= gig.date %></h4>
+    <h4>Band: <%= gig.band_name %></h4>
+    <h4>Date: Music Link: <%= gig.music_link %></h4>
+  </ul>
+  <% end %>

@@ -1,0 +1,11 @@
+development:
+ adapter: postgresql
+ database: the-jazz-music-development
+
+test:
+ adapter: postgresql
+ database: the-jazz-music-test
+
+production:
+ adapter: postgresql
+ database: the-jazz-music-production
