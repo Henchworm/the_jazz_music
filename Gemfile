@@ -7,7 +7,6 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'tux'
 gem 'shotgun'
-gem 'rake'
 gem "puma", '~> 3.7'
 
 group :test do
