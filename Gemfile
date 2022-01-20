@@ -16,4 +16,5 @@ group :test do
  gem 'pry'
  gem 'shoulda-matchers'
  gem 'rack-test'
+ gem 'launchy'
 end
