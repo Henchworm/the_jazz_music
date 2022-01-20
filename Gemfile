@@ -17,4 +17,5 @@ group :test do
  gem 'shoulda-matchers'
  gem 'rack-test'
  gem 'launchy'
+ gem 'orderly'
 end

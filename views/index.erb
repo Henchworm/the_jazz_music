@@ -1,6 +1,6 @@
 
 <h1>Upcoming Gigs for <%= Time.now.year %></h1>
-<% @gigs.each do |gig| %>
+<% @gigs.order_soonest.each do |gig| %>
   <ul>
     <h4>Date: <%=gig.date.strftime('%m/%d/%Y') %></h4>
     <h4>Band: <%= gig.band_name %></h4>

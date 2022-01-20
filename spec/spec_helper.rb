@@ -15,6 +15,7 @@ ENV["RACK_ENV"] ||= "test"
 require_relative "../app"
 require 'rspec'
 require 'capybara/dsl'
+require 'orderly'
 require 'database_cleaner'
 Capybara.app = TheJazzMusicApp
 DatabaseCleaner.strategy = :truncation
