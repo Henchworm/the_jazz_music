@@ -1,5 +1,5 @@
 gig_1 = Gig.create!(
-  date: "04/20/2023",
+  date: Time.new(2002, 10, 31),
   band_name:
   "Trains and Dreams",
   music_link: "fakemusic.com")

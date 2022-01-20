@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_01_19_192409) do
   enable_extension "plpgsql"
 
   create_table "gigs", force: :cascade do |t|
-    t.string "date"
+    t.datetime "date", precision: 6
     t.string "band_name"
     t.string "music_link"
     t.datetime "created_at", precision: 6, null: false
