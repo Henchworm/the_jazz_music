@@ -14,5 +14,5 @@ class TheJazzMusicApp < Sinatra::Base
     @gigs = Gig.all
     erb :index
   end
-  run! if app_file == $0
+  run! 
 end
