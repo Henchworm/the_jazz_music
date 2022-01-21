@@ -9,6 +9,9 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem "puma", '~> 3.7'
 
+group :production do
+  gem 'activesupport'
+end
 group :test do
  gem 'capybara'
  gem 'database_cleaner'
