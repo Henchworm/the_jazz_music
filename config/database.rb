@@ -1,5 +1,4 @@
 require "sinatra/activerecord"
-require "activerecord"
 
 database_name = "the-jazz-music-#{TheJazzMusicApp.environment}"
 db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost#{datbase_name}")

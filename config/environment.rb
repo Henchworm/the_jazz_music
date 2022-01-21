@@ -13,6 +13,7 @@ configure :production do
    :database => db.path[1..-1],
    :encoding => 'utf8'
  )
+  end 
 
 APP_ROOT = File.expand_path("..", __dir__)
 # require the controller(s)

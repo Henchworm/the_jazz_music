@@ -1,3 +1,3 @@
-
-require File.expand_path('../config/environment',  __FILE__)
+require 'active_support/core_ext'
+require './app'
 run TheJazzMusicApp
