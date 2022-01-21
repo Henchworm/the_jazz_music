@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'sinatra-activerecord'
+gem 'sinatra', require: 'sinatra/base'
 gem 'rack'
 gem 'rake'
-gem 'sinatra'
 gem 'pg'
 gem "puma", '~> 3.7'
-gem 'activesupport', '4.1.4'
+gem 'activerecord'
+gem 'activesupport', '~> 7.0.1'
 
 
 group :test do

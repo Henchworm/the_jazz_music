@@ -43,8 +43,6 @@ GEM
       ruby2_keywords (~> 0.0.1)
     nokogiri (1.13.1-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.1-x86_64-linux)
-      racc (~> 1.4)
     orderly (0.1.1)
       capybara (>= 1.1)
       rspec (>= 2.14)
@@ -83,9 +81,6 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
-    sinatra-activerecord (2.0.25)
-      activerecord (>= 4.1)
-      sinatra (>= 1.0)
     tilt (2.0.10)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -94,10 +89,10 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
-  x86_64-linux
 
 DEPENDENCIES
-  activesupport
+  activerecord
+  activesupport (~> 7.0.1)
   capybara
   database_cleaner
   launchy
@@ -111,7 +106,6 @@ DEPENDENCIES
   rspec
   shoulda-matchers
   sinatra
-  sinatra-activerecord
 
 BUNDLED WITH
    2.3.4
