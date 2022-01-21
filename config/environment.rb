@@ -1,6 +1,5 @@
 require 'bundler'
 Bundler.require
-require 'active_support/core_ext'
 
 
 
@@ -13,7 +12,7 @@ configure :production do
    :database => db.path[1..-1],
    :encoding => 'utf8'
  )
-  end 
+  end
 
 APP_ROOT = File.expand_path("..", __dir__)
 # require the controller(s)
