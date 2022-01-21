@@ -1,3 +1,3 @@
-require 'active_support/core_ext'
+require "active_support"
 require './app'
 run TheJazzMusicApp

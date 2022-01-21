@@ -8,6 +8,7 @@ gem 'pg'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem "puma", '~> 3.7'
+gem 'activesupport'
 
 group :test do
  gem 'capybara'
