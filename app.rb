@@ -1,5 +1,7 @@
 require "sinatra/base"
 require "sinatra/activerecord"
+require 'active_support/core_ext'
+
 
 require_relative "lib/gig"
 
