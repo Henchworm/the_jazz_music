@@ -6,6 +6,8 @@ gem 'rake'
 gem 'sinatra'
 gem 'pg'
 gem "puma", '~> 3.7'
+gem 'activesupport', '4.1.4'
+
 
 group :production do
   gem 'activesupport'
