@@ -1,5 +1,7 @@
 require 'bundler'
 Bundler.require
+require 'active_support/core_ext'
+
 
 
 configure :production do
