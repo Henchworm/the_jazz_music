@@ -1,6 +1,6 @@
 require "sinatra/base"
-require 'activerecord
-require "sinatra/activerecord"
+require "activerecord"
+require 'sinatra/activerecord'
 require 'active_support/core_ext'
 
 
