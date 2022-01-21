@@ -1,6 +1,6 @@
 require "sinatra/base"
 require "sinatra/activerecord"
-require "pry"
+
 require_relative "lib/gig"
 
 class TheJazzMusicApp < Sinatra::Base

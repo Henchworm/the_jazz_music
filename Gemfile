@@ -5,8 +5,6 @@ gem 'activesupport'
 gem 'pg'
 gem 'activerecord'
 gem 'sinatra-activerecord'
-gem 'tux'
-gem 'shotgun'
 gem "puma", '~> 3.7'
 
 group :test do
