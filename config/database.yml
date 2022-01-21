@@ -7,6 +7,6 @@ test:
  database: the-jazz-music-test
 
 production:
-   adapter: postgresql
-    database: the-jazz-music-production
+ adapter: postgresql
+ database: the-jazz-music-production
 
