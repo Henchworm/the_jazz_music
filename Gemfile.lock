@@ -97,7 +97,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activerecord
   activesupport
   capybara
   database_cleaner
