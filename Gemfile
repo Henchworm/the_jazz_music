@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'sinatra-activerecord'
 gem 'rack'
 gem 'rake'
 gem 'sinatra'
 gem 'pg'
-gem 'sinatra-activerecord'
 gem "puma", '~> 3.7'
 
 group :production do
