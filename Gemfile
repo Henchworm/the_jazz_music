@@ -3,10 +3,11 @@ source 'https://rubygems.org'
 gem 'sinatra', require: 'sinatra/base'
 gem 'rack'
 gem 'rake'
-gem 'pg'
 gem "puma", '~> 3.7'
 gem 'activerecord'
+gem 'sinatra-activerecord'
 gem 'activesupport', '~> 7.0.1'
+gem 'pg'
 
 
 group :test do
