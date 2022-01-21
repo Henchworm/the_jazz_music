@@ -1,10 +1,8 @@
-require "sinatra/base"
-require "activerecord"
+require 'sinatra/base'
+require 'activerecord'
 require 'sinatra/activerecord'
 require 'active_support/core_ext'
-
-
-require_relative "lib/gig"
+require_relative 'lib/gig'
 
 class TheJazzMusicApp < Sinatra::Base
   register Sinatra::ActiveRecordExtension
