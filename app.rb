@@ -1,9 +1,7 @@
 require 'bundler'
 Bundler.require
 
-require 'active_support/all'
 require 'sinatra/base'
-require 'sinatra/activerecord'
 require_relative 'lib/gig'
 
 class TheJazzMusicApp < Sinatra::Base
