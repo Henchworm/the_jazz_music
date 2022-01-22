@@ -6,7 +6,7 @@ gem 'rake'
 gem "puma", '~> 3.7'
 gem 'activerecord', '~> 6.0'
 gem 'sinatra-activerecord'
-gem 'activesupport', '~> 6.0.1'
+# gem 'activesupport', '~> 6.0.1'
 gem 'pg'
 
 

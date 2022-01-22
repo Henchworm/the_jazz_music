@@ -101,7 +101,6 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 6.0)
-  activesupport (~> 6.0.1)
   capybara
   database_cleaner
   launchy
