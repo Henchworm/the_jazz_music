@@ -1,12 +1,12 @@
 development:
  adapter: postgresql
- database: the-jazz-music-development
+ database: db/the-jazz-music-development
 
 test:
  adapter: postgresql
- database: the-jazz-music-test
+ database: db/the-jazz-music-test
 
 production:
  adapter: postgresql
- database: the-jazz-music-production
+ database: db/the-jazz-music-production
 
