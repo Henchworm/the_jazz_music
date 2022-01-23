@@ -27,5 +27,13 @@ RSpec.describe 'the admin gigs index page' do
     expect(page).to_not have_content(gig_3.music_link)
   end
 
+  it "has links to each gigs show page" do
+    visit "/admin/gigs"
+    click_link ("View Gig ##{gig_1.id}")
+    expect(current_path).to eq("/admin/gigs/#{gig_1.id}")
+  end
+
+
+
 
 end

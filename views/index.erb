@@ -1,5 +1,4 @@
-
-<h1>Upcoming Gigs for <%= Time.now.year %> Admin Portal</h1>
+<h1>Upcoming Gigs for <%= Time.now.year %></h1>
 <% @gigs.order_soonest.each do |gig| %>
   <ul>
     <h4>Date: <%=gig.date.strftime('%m/%d/%Y') %></h4>

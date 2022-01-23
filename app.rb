@@ -13,21 +13,25 @@ class TheJazzMusicApp < Sinatra::Base
     "Hi Bitch"
   end
 
+  get '/gigs' do
+    @gigs = Gig.all
+    erb :index
+  end
+
   get '/admin/gigs' do
     @gigs = Gig.all
-    erb :admin_index
+    erb :"admin/admin_index"
+  end
+
+  get '/admin/gigs/new' do
+    erb :"admin/admin_new"
   end
 
   get '/admin/gigs/:id' do
     @gig = Gig.find(params[:id])
-    erb :admin_show
+    erb :"/admin/admin_show"
   end
 
-
-
-  get '/admin/gigs/new' do
-    erb :admin_new
-  end
 
   post '/admin/gigs/create' do
     Gig.create!(

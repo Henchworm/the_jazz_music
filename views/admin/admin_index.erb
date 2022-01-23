@@ -1,0 +1,10 @@
+
+<h1>Upcoming Gigs for <%= Time.now.year %> Admin Portal</h1>
+<% @gigs.order_soonest.each do |gig| %>
+  <ul>
+    <h4>Date: <%=gig.date.strftime('%m/%d/%Y') %></h4>
+    <h4>Band: <%= gig.band_name %></h4>
+    <h4>Music Link: <%= gig.music_link %></h4>
+    <p><a href="/admin/gigs/<%= gig.id %>">View Gig #<%= gig.id %></a></p>
+  </ul>
+  <% end %>
