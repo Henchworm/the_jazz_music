@@ -9,7 +9,7 @@ class TheJazzMusicApp < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
   get '/' do
-    "Hi Bitch"
+    erb :welcome
   end
 
   get '/gigs' do
