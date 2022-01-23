@@ -17,7 +17,9 @@ ActiveRecord::Schema.define(version: 2022_01_19_192409) do
 
   create_table "gigs", force: :cascade do |t|
     t.datetime "date"
+    t.string "venue"
     t.string "band_name"
+    t.text "deets"
     t.string "music_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

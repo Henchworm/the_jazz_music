@@ -4,6 +4,7 @@ Bundler.require
 require 'sinatra/base'
 require "sinatra/activerecord"
 require_relative 'lib/gig'
+require "pry"
 
 class TheJazzMusicApp < Sinatra::Base
   register Sinatra::ActiveRecordExtension
@@ -15,6 +16,11 @@ class TheJazzMusicApp < Sinatra::Base
   get '/gigs' do
     @gigs = Gig.all
     erb :index
+  end
+
+  get "/gigs/:id/music_link" do
+    gig = Gig.find(params[:id])
+    redirect to gig.music_link
   end
 
   get '/admin/gigs' do
