@@ -1,5 +1,6 @@
 require 'bundler'
 Bundler.require
+require 'pry'
 
 require 'sinatra/base'
 require "sinatra/activerecord"
@@ -12,22 +13,29 @@ class TheJazzMusicApp < Sinatra::Base
     "Hi Bitch"
   end
 
-  get '/gigs' do
+  get '/admin/gigs' do
     @gigs = Gig.all
-    erb :index
+    erb :admin_index
   end
+
+  get '/admin/gigs/:id' do
+    @gig = Gig.find(params[:id])
+    erb :admin_show
+  end
+
+
 
   get '/admin/gigs/new' do
     erb :admin_new
   end
 
-  post '/create' do
+  post '/admin/gigs/create' do
     Gig.create!(
       date: DateTime.strptime(params[:date], '%m/%d/%Y'),
       band_name: params[:band_name],
       music_link: params[:music_link]
     )
-    redirect '/gigs'
+    redirect '/admin/gigs'
   end
 
   run! if app_file == $0
