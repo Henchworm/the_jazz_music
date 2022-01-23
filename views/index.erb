@@ -4,6 +4,8 @@
 
   <ul>
     <h4>Date: <%=gig.date.strftime('%m/%d/%Y') %></h4>
+    <h4>Venue: <%=gig.venue%></h4>
+    <h4>Deets: <%=gig.deets%></h4>
     <a href="/gigs/<%=gig.id%>/music_link"><%= gig.band_name %> Music Link</a>
   </ul>
 

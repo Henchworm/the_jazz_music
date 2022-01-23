@@ -5,6 +5,8 @@ RSpec.describe "the admin new gig page" do
 
     fill_in :date, with: "05/20/2024"
     fill_in :band_name, with: "Madagascar Sentries"
+    fill_in :venue, with: "Lion's Lair"
+    fill_in :deets, with: "No cajjees"
     fill_in :music_link, with: "www.fakelink.com"
     click_button :submit
     expect(current_path).to eq("/admin/gigs")

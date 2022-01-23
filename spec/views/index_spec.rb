@@ -9,7 +9,11 @@ RSpec.describe 'the admin gigs index page' do
     expect(page).to have_content("10/10/2022")
     expect(page).to have_content("10/30/2022")
     expect(page).to have_content(gig_1.band_name)
-
+    expect(page).to have_content(gig_2.band_name)
+    expect(page).to have_content(gig_1.venue)
+    expect(page).to have_content(gig_2.venue)
+    expect(page).to have_content(gig_1.deets)
+    expect(page).to have_content(gig_2.deets)
   end
 
   it "orders by how soon gigs are" do
@@ -25,7 +29,8 @@ RSpec.describe 'the admin gigs index page' do
 
   it "clicks link to external page" do
     visit "/gigs"
-    click_link("Music Link for Trains and Dreams")
+    click_link("Trains and Dreams Music Link")
+    expect(current_path).to eq("/fakemusic.com")
   end
 
 end

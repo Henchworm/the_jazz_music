@@ -4,7 +4,6 @@ Bundler.require
 require 'sinatra/base'
 require "sinatra/activerecord"
 require_relative 'lib/gig'
-require "pry"
 
 class TheJazzMusicApp < Sinatra::Base
   register Sinatra::ActiveRecordExtension
@@ -41,7 +40,9 @@ class TheJazzMusicApp < Sinatra::Base
   post '/admin/gigs/create' do
     Gig.create!(
       date: DateTime.strptime(params[:date], '%m/%d/%Y'),
+      venue: params[:venue],
       band_name: params[:band_name],
+      deets: params[:deets],
       music_link: params[:music_link]
     )
     redirect '/admin/gigs'
