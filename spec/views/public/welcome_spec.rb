@@ -7,7 +7,7 @@ RSpec.describe "the welcome page" do
     expect(current_path).to eq("/gigs")
   end
 
-  it "has link to bandcamp" do
+  it "has link to blargs" do
     visit "/"
     click_link("Blarg")
     expect(current_path).to eq("/blargs")

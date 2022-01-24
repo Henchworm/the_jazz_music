@@ -11,4 +11,19 @@ RSpec.describe "the admin blarg index" do
     expect(blarg_1.subject).to appear_before(blarg_2.subject)
     expect(blarg_1.text).to appear_before(blarg_2.text)
   end
+
+  it "has a link that create a new blarg" do
+    visit "/admin/blargs"
+    click_link("Create a new Blarg")
+    expect(current_path).to eq("/admin/blargs/new")
+    fill_in :title, with: "The Jazz Music"
+    fill_in :text, with: "This is a blog post"
+    fill_in :subject, with: "RSpec"
+    click_button "submit"
+    expect(current_path).to eq('/admin/blargs')
+    expect(page).to have_content(Blarg.all.last.title)
+    expect(page).to have_content(Blarg.all.last.text)
+    expect(page).to have_content(Blarg.all.last.subject)
+    save_and_open_page
+  end
 end

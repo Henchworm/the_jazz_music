@@ -1,6 +1,7 @@
 require 'bundler'
 Bundler.require
 
+require "pry"
 require 'sinatra/base'
 require "sinatra/activerecord"
 require_relative 'models/gig'
@@ -10,7 +11,7 @@ class TheJazzMusicApp < Sinatra::Base
   register Sinatra::ActiveRecordExtension
 
   get '/' do
-    erb :welcome
+    erb :"public/welcome"
   end
 
   get '/bandcamp' do
@@ -27,12 +28,12 @@ class TheJazzMusicApp < Sinatra::Base
 
   get '/blargs' do
     @blargs = Blarg.all
-    erb :blarg_index
+    erb :"public/blarg_index"
   end
 
   get '/gigs' do
     @gigs = Gig.all
-    erb :gig_index
+    erb :"public/gig_index"
   end
 
   get '/gigs/:id/music_link' do
@@ -81,19 +82,32 @@ class TheJazzMusicApp < Sinatra::Base
   post '/admin/gigs/create' do
     Gig.create!(
       date: DateTime.strptime(params[:date], '%m/%d/%Y'),
-      venue: params[:venue],
-      band_name: params[:band_name],
-      deets: params[:deets],
+      venue:      params[:venue],
+      band_name:  params[:band_name],
+      deets:      params[:deets],
       music_link: params[:music_link]
     )
     redirect '/admin/gigs'
   end
 
-
   get '/admin/blargs' do
     @blargs = Blarg.all
     erb :"/admin/admin_blargs"
   end
+
+  get '/admin/blargs/new' do
+    erb :"/admin/blarg_new"
+  end
+
+  post '/admin/blargs/create' do
+    Blarg.create!(
+      title:    params[:title],
+      text:     params[:text],
+      subject:  params[:subject]
+    )
+    redirect '/admin/blargs'
+  end
+
 
   run! if app_file == $0
 end
