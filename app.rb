@@ -1,7 +1,6 @@
 require 'bundler'
 Bundler.require
 
-require "pry"
 require 'sinatra/base'
 require "sinatra/activerecord"
 require_relative 'models/gig'
@@ -107,7 +106,5 @@ class TheJazzMusicApp < Sinatra::Base
     )
     redirect '/admin/blargs'
   end
-
-
   run! if app_file == $0
 end
