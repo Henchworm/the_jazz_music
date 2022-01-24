@@ -1,0 +1,6 @@
+<h1>All Blargs</h1>
+<%@blargs.each do |blarg| %>
+<h4><%= blarg.title %></h4>
+<h5>Subject: <%= blarg.subject %></h5>
+<p><%= blarg.text %></p>
+<% end %>

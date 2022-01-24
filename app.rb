@@ -5,6 +5,7 @@ require 'sinatra/base'
 require "sinatra/activerecord"
 require_relative 'lib/gig'
 require_relative 'lib/blarg'
+require "pry"
 
 
 class TheJazzMusicApp < Sinatra::Base
@@ -69,6 +70,12 @@ class TheJazzMusicApp < Sinatra::Base
       music_link: params[:music_link]
     )
     redirect '/admin/gigs'
+  end
+
+
+  get "/admin/blargs" do
+    @blargs = Blarg.all
+    erb :"/admin/admin_blargs"
   end
 
   run! if app_file == $0
