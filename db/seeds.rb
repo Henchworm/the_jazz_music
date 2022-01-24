@@ -4,4 +4,5 @@ gig_1 = Gig.create!(
   "Trains and Dreams",
   deets: "Big ones only",
   venue: "Lion's Lair",
-  music_link: "http://chrishewitt.bandcamp.com")
+  music_link: "http://chrishewitt.bandcamp.com",
+)

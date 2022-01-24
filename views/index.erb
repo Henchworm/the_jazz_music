@@ -1,12 +1,49 @@
-<h1>Upcoming Gigs for <%= Time.now.year %></h1>
-<% @gigs.order_soonest.each do |gig| %>
-<h4>With: <%= gig.band_name %></h4>
+<head>
+  <style media="screen">
+    /* @font-face {
+    font-family: Futura;
+    src: local('Futura Std');
+  } */
+    body {
+      background-color: #000;
+      text-align: center;
+      font-family: Futura;
+      color: #FFC0CB;
 
-  <ul>
-    <h4>Date: <%=gig.date.strftime('%m/%d/%Y') %></h4>
-    <h4>Venue: <%=gig.venue%></h4>
-    <h4>Deets: <%=gig.deets%></h4>
-    <a href="/gigs/<%=gig.id%>/music_link"><%= gig.band_name %> Music Link</a>
-  </ul>
+    }
+
+    .title {
+      color: #bada55;
+    }
+
+    p {
+      font-weight: bold;
+    }
+
+    span {
+      color: blue;
+      font-weight: normal;
+    }
+
+    href {
+      font-size: 1.1rem;
+      border: 1px solid #fff;
+    }
+
+    .support {
+      margin-top: 4rem;
+      font-size: 1.5rem;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<h1 class="title">Upcoming Gigs for <%= Time.now.year %></h1>
+<% @gigs.order_soonest.each do |gig| %>
+<h2 class="support">✨<%= gig.band_name %>✨</h2>
+<p>Date: <span><%=gig.date.strftime('%m/%d/%Y') %></span></p>
+<p>Venue: <%=gig.venue%></p>
+<p>Deets: <%=gig.deets%></p>
+<a href="/gigs/<%=gig.id%>/music_link"><%= gig.band_name %> Music Link</a>
 
   <% end %>
