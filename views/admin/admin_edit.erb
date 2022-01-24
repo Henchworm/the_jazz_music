@@ -1,0 +1,11 @@
+<h1>Edit an Upcoming Gig</h1>
+<form method="POST" action="/admin/gigs/<%= @gig.id%>/edit">
+  <p>Date: <input type="text", name= "date" /></p>
+  <p>Band Name: <input type="text" name= "band_name"/></p>
+  <p>Venue: <input type="text" name= "venue"/></p>
+  <p>Deets: <input type="text" name= "deets"/></p>
+
+
+  <p>Music Link: <input type="text" name= "music_link"/></p>
+  <input type="submit" name= "submit" />
+</form>

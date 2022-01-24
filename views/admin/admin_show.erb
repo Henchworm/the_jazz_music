@@ -4,6 +4,7 @@
   <p>Band: <%= @gig.band_name %></p>
   <p>Music link: <%= @gig.music_link %></p>
 </ul>
+<p><a href="/admin/gigs/<%= @gig.id %>/edit">Edit this gig</a></p>
 
 <form method="POST" action="/admin/gigs/<%= @gig.id %>/destroy">
   <label for= "submit">Delete Gig# <%= @gig.id %></label>

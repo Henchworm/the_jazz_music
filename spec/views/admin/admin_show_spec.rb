@@ -17,6 +17,11 @@ RSpec.describe "the admin gig show page" do
     expect(current_path).to eq("/admin/gigs")
     expect(page).to_not have_content(gig_1.band_name)
     expect(page).to_not have_content(gig_1.music_link)
+  end
 
+  it "has a link to update a gig" do
+    visit "/admin/gigs/#{gig_1.id}"
+    click_link "Edit this gig"
+    expect(current_path).to eq("/admin/gigs/#{gig_1.id}/edit")
   end
 end
