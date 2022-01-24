@@ -59,7 +59,6 @@ class TheJazzMusicApp < Sinatra::Base
     redirect to "/admin/gigs"
   end
 
-
   post '/admin/gigs/create' do
     Gig.create!(
       date: DateTime.strptime(params[:date], '%m/%d/%Y'),
@@ -70,8 +69,6 @@ class TheJazzMusicApp < Sinatra::Base
     )
     redirect '/admin/gigs'
   end
-
-  
 
   run! if app_file == $0
 end
