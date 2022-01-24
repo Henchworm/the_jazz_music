@@ -4,6 +4,8 @@ Bundler.require
 require 'sinatra/base'
 require "sinatra/activerecord"
 require_relative 'lib/gig'
+require_relative 'lib/blarg'
+
 
 class TheJazzMusicApp < Sinatra::Base
   register Sinatra::ActiveRecordExtension
