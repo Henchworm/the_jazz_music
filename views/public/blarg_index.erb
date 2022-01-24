@@ -1,6 +1,40 @@
-<h1>Blargs</h1>
+
+<head>
+  <style media="screen">
+
+    body {
+      text-align: left;
+      font-family: Futura;
+      background-color: #fffaf0
+      color: #000;
+    }
+
+    .title {
+      margin-bottom: 10;
+      font-size:  50px;
+      font-weight: bold;
+      color: #FF00FF
+    }
+
+    p {
+      font-weight: normal;
+      max-width: 1000px;
+    }
+
+
+
+  </style>
+</head>
+
+
+
+
+
+
+<h1 class="title">Blärg</h1>
 <%@blargs.each do |blarg| %>
-<h4><%= blarg.title %></h4>
-<h5>Subject: <%= blarg.subject %></h5>
+<h4><%= blarg.created_at.strftime('%m/%d/%Y') %>: <%= blarg.title %></h4>
+<p>Subject: <%= blarg.subject %><p>
 <p><%= blarg.text %></p>
+<HR>
 <% end %>
