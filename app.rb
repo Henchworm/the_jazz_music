@@ -3,10 +3,8 @@ Bundler.require
 
 require 'sinatra/base'
 require "sinatra/activerecord"
-require_relative 'lib/gig'
-require_relative 'lib/blarg'
-require "pry"
-
+require_relative 'models/gig'
+require_relative 'models/blarg'
 
 class TheJazzMusicApp < Sinatra::Base
   register Sinatra::ActiveRecordExtension
@@ -15,15 +13,34 @@ class TheJazzMusicApp < Sinatra::Base
     erb :welcome
   end
 
-  get '/gigs' do
-    @gigs = Gig.all
-    erb :index
+  get '/bandcamp' do
+    redirect to "https://chrishewitt.bandcamp.com"
   end
 
-  get "/gigs/:id/music_link" do
+  get '/github' do
+    redirect to "https://github.com/Henchworm"
+  end
+
+  get '/youtube' do
+    redirect to "https://www.youtube.com/channel/UCMsFCUejwHYwPpKttz9H31g"
+  end
+
+  get '/blargs' do
+    @blargs = Blarg.all
+    erb :blarg_index
+  end
+
+  get '/gigs' do
+    @gigs = Gig.all
+    erb :gig_index
+  end
+
+  get '/gigs/:id/music_link' do
     gig = Gig.find(params[:id])
     redirect to gig.music_link
   end
+
+
 
   get '/admin/gigs' do
     @gigs = Gig.all
@@ -73,7 +90,7 @@ class TheJazzMusicApp < Sinatra::Base
   end
 
 
-  get "/admin/blargs" do
+  get '/admin/blargs' do
     @blargs = Blarg.all
     erb :"/admin/admin_blargs"
   end
