@@ -7,7 +7,8 @@ RSpec.describe "the admin blarg index" do
 
   it "shows all blargs ordered by most recent" do
     visit "/admin/blargs"
-    save_and_open_page
     expect(blarg_1.title).to appear_before(blarg_2.title)
+    expect(blarg_1.subject).to appear_before(blarg_2.subject)
+    expect(blarg_1.text).to appear_before(blarg_2.text)
   end
 end
