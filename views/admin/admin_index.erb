@@ -1,5 +1,6 @@
 
 <h1>Upcoming Gigs for <%= Time.now.year %> Admin Portal</h1>
+<h4><a href="/admin/gigs/new"</a>Create a New Gig</h4>
 <% @gigs.order_soonest.each do |gig| %>
   <ul>
     <h4>Date: <%=gig.date.strftime('%m/%d/%Y') %></h4>

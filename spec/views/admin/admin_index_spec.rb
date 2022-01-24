@@ -4,6 +4,11 @@ RSpec.describe 'the admin gigs index page' do
   let!(:gig_2) {Gig.create!(date: Time.new(2022, 10, 30), band_name: "Brains and Creams",venue: "Lion's Lair", deets: "21+", music_link: "falsemusic.com")}
   let!(:gig_3) {Gig.create!(date: Time.new(2018, 10, 30), band_name: "Dead Ancient Band",venue: "Lion's Lair", deets: "21+", music_link: "notrealmusic.com")}
 
+  it "has a link to create a gig" do
+    visit "/admin/gigs"
+    click_link("Create a New Gig")
+    expect(current_path).to eq("/admin/gigs/new")
+  end
 
   it "shows the current upcoming gigs" do
     visit "/admin/gigs"
