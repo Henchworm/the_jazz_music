@@ -4,3 +4,8 @@
   <p>Band: <%= @gig.band_name %></p>
   <p>Music link: <%= @gig.music_link %></p>
 </ul>
+
+<form method="POST" action="/admin/gigs/<%= @gig.id %>/destroy">
+  <label for= "submit">Delete Gig# <%= @gig.id %></label>
+  <input type="submit" name= "submit"/>
+</form>

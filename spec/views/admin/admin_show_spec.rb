@@ -10,4 +10,10 @@ RSpec.describe "the admin gig show page" do
     expect(page).to have_content(gig_1.band_name)
     expect(page).to have_content(gig_1.music_link)
   end
+
+  it "has button that deletes a gig" do
+    visit "/admin/gigs/#{gig_1.id}"
+    click_button("submit")
+    expect(current_path).to eq("/admin/gigs")
+  end
 end

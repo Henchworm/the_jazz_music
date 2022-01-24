@@ -36,6 +36,11 @@ class TheJazzMusicApp < Sinatra::Base
     erb :"/admin/admin_show"
   end
 
+  post '/admin/gigs/:id/destroy' do
+    Gig.find(params[:id]).destroy
+    redirect to "/admin/gigs"
+  end
+
 
   post '/admin/gigs/create' do
     Gig.create!(
