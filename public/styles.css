@@ -1,7 +1,7 @@
 
 body {
      font-family: Futura; sans-serif;
-}
+   }
 h1 {
   font-size: 80px;
   text-align: left;
@@ -15,14 +15,25 @@ h4 {
 }
 p {
   text-align: left;
+  font-style: italic;
+}
+.show {
+  padding-top: -50px;
+  color:white
 }
 .link {
-  text-decoration: none;
-  color: white;
+  color:transparent;
 }
+a {
+  text-decoration-style: none;
+}
+a:visited {
+ text-decoration: none;
+}
+
 .first {
+    color:transparent;
    float: left;
-   color: transparent;
    width: 25%;
    padding: 10px;
    height: 800px;
@@ -31,8 +42,8 @@ p {
    background-repeat: no-repeat;
 }
 .second {
+  color:transparent;
   float: left;
-  color: transparent;
   width: 25%;
   padding: 10px;
   height: 800px;
@@ -41,8 +52,8 @@ p {
   background-repeat: no-repeat;
 }
 .third {
+  color:transparent;
   float: left;
-  color: transparent;
   width: 25%;
   padding: 10px;
   height: 800px;
@@ -51,8 +62,8 @@ p {
   background-repeat: no-repeat;
 }
  .fourth {
+   color:transparent;
    float: left;
-   color: transparent;
    width: 25%;
    padding: 10px;
    height: 800px;

@@ -13,6 +13,10 @@ class TheJazzMusicApp < Sinatra::Base
     erb :"public/welcome"
   end
 
+  get '/music' do
+    erb :"public/music"
+  end
+
   get '/bandcamp' do
     redirect to "https://chrishewitt.bandcamp.com"
   end
