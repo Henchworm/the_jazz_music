@@ -9,7 +9,9 @@ RSpec.describe "the welcome page" do
 
   it "has link to blargs" do
     visit "/"
-    click_link("Blarg")
+    save_and_open_page
+    click_link("Blärg")
     expect(current_path).to eq("/blargs")
+
   end
 end

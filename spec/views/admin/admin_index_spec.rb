@@ -38,8 +38,4 @@ RSpec.describe 'the admin gigs index page' do
     click_link ("View Gig ##{gig_1.id}")
     expect(current_path).to eq("/admin/gigs/#{gig_1.id}")
   end
-
-
-
-
 end

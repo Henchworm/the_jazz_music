@@ -24,6 +24,5 @@ RSpec.describe "the admin blarg index" do
     expect(page).to have_content(Blarg.all.last.title)
     expect(page).to have_content(Blarg.all.last.text)
     expect(page).to have_content(Blarg.all.last.subject)
-    save_and_open_page
   end
 end
