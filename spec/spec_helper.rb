@@ -12,12 +12,13 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 ENV["RACK_ENV"] ||= "test"
-require_relative "../app"
+require File.expand_path '../../app', __FILE__
 require 'rspec'
 require 'capybara/dsl'
 require 'orderly'
 require 'database_cleaner'
 require 'pry'
+require 'rspec'
 Capybara.app = TheJazzMusicApp
 DatabaseCleaner.strategy = :truncation
 RSpec.configure do |c|
@@ -120,3 +121,4 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
