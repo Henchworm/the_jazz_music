@@ -78,8 +78,6 @@ GEM
       rspec-support (~> 3.10.0)
     rspec-support (3.10.3)
     ruby2_keywords (0.0.5)
-    shoulda-matchers (5.1.0)
-      activesupport (>= 5.2.0)
     sinatra (2.1.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -115,7 +113,6 @@ DEPENDENCIES
   rack-test
   rake
   rspec
-  shoulda-matchers (~> 5.1.0)
   sinatra
   sinatra-activerecord
 
