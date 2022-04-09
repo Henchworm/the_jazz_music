@@ -41,6 +41,7 @@ class TheJazzMusicApp < Sinatra::Base
 
   get '/gigs' do
     @gigs = Gig.all
+    @emojis = ["🤖 ", "👽", " ⚡️",  "✨", " 🦑 ", "🦴"]
     erb :"public/gig_index"
   end
 
@@ -50,6 +51,11 @@ class TheJazzMusicApp < Sinatra::Base
   end
 
   #ADMIN
+
+  get '/admin/login' do
+    erb :"admin/admin_login"
+  end
+
   post '/admin/login' do
     admin = Admin.find_by(username: params[:username])
     if admin.authenticate(params[:password])

@@ -20,8 +20,6 @@ h4 {
 p {
   text-align: left;
   font-weight: bold;
-
-  /* font-style: italic; */
 }
 .show {
   padding-top: -50px;
@@ -74,24 +72,24 @@ a:visited {
    /* background-repeat: no-repeat; */
 }
 .first:hover {
-   opacity:0.9;
+   opacity:0.1;
    color:white;
    background-image: url('https://i.imgur.com/z9LtFTI.png?1');
 }
 .second:hover {
-   opacity:0.9;
+   opacity:0.1;
    color:yellow;
    background-image: url('https://i.imgur.com/VoRnROe.png?2');
 
 }
 .third:hover {
-   opacity:0.9;
+   opacity:0.1;
    color:#FF00FF;
    background-image: url('https://i.imgur.com/4rxcTr9.png?1');
 
 }
 .fourth:hover {
-   opacity:0.9;
+   opacity:0.1;
    color:red;
    background-image: url('https://i.imgur.com/kTBnkFC.png?1');
 }

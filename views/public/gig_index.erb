@@ -1,53 +1,114 @@
 <head>
-  <style media="screen">
+  <style>
+    .first {
+       float: left;
+       width: 50%;
+       height: 800px;
+       text-align: center;
+       background-image: url("https://i.imgur.com/4rxcTr9.png?1");
+       filter: blur(0.1px);
+       background-color: black;
+       filter: contrast(110%);
+
+       background-repeat: no-repeat;
+       background-size:cover;
+
+    }
+    .second {
+       float: right;
+       width: 50%;
+       height: 800px;
+       filter: contrast(110%);
+       text-align: center;
+       background-image: url("https://i.imgur.com/2b9LBMN.png");
+       background-repeat: no-repeat;
+       filter: blur(0.1px);
+       background-color: black;
+
+
+
+       background-size:cover;
+    }
+
 
     body {
-      text-align: center;
-      font-family: Futura;
-      background-color: #fffaf0
-      color: #000;
-      font-weight: light;
+    font-family: 'futura', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #000; */
+
+
+    min-height: 100vh;
+
     }
 
     .title {
       color: #000;
+      text-align:c
     }
+
+    h2 {
+      color: white;
+      filter: blur(0.3px);
+      text-shadow: black 2px 3px;"
+
+    }
+
 
     p {
-      max-width: 600px;
-      font-weight: bold;
+      width: 400px;
       text-align: center;
       margin:0 auto;
-      padding:5px;
+      padding:3px;
+      color:deeppink;
+      text-shadow: white 0.5px 0.5px;"
 
-
-    }
-
-    span {
-      color: blue;
-      font-weight: normal;
     }
 
     href {
       font-size: 1.1rem;
       border: 1px solid #fff;
+      color: pink;
     }
 
     .support {
-      margin-top: 3rem;
-      margin-bottom: 0.2rem;
       font-size: 1.5rem;
       text-decoration: underline;
     }
   </style>
 </head>
 
-<h1 class="title">Upcoming Gigs for <%= Time.now.year %></h1>
-<% @gigs.order_soonest.each do |gig| %>
-<h2 class="support">✨<%= gig.band_name %>✨</h2>
-<p>Date: <span><%=gig.date.strftime('%m/%d/%Y') %></span></p>
-<p>Venue: <%=gig.venue%></p>
-<p>Deets: <%=gig.deets%></p>
-<a href="/gigs/<%=gig.id%>/music_link"><%= gig.band_name %> Music Link</a>
+<div class="first">
+    <h1 style= "color: pink;
+        filter: blur(0.2px);
+        text-shadow: blue 2px 3px;
+        padding: 15px">Upcoming Gigs for <%= Time.now.year %></h1>
+  <% @gigs.order_soonest.each do |gig| %>
+  <h2><%= @emojis.sample + " " + gig.band_name + " " +@emojis.sample%> </h2>
+  <p>Date: <span><%=gig.date.strftime('%m/%d/%Y') %></span></p>
+  <p>Venue: <%=gig.venue%></p>
+  <p>Deets: <%=gig.deets%></p>
+  <a href="/gigs/<%=gig.id%>/music_link"><%= gig.band_name %> Music!</a>
+</div>
+
+
+<div class="second">
+  <h1 style="color: pink;
+      filter: blur(0.2px);
+      text-shadow: blue 2px 3px;
+      padding:15px;">Projects / Media</h1>
+      <h2>Gamelan Tunas Mekar</h2>
+      <p>Based in Denver, Colorado, USA, Gamelan Tunas Mekar is a community ensemble under the direction of Balinese composer and Artist-in-Residence I Made Lasmawan.</p>
+      <h2>Space Force</h2>
+      <p>Space Force is an avant-funk and that makes you think while you bump and grind.</p>
+      <h2>Freshman Philosopy Majors</h2>
+      <p>Denver's hottest pop sensation, featuring DJ Pleasurdactyl, BBYCHAY$$, and DJ PR33ND@WG.</p>
+      <h2>Golden Bullfrog</h2>
+      <p>Solo percussion by yours truly. Original works and percussion classics.</p>
+      <h2>Best Friend Michael</h2>
+      <p>Ohhh, Michael <3</p>
+</div>
+
 
   <% end %>
