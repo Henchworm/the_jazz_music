@@ -26,11 +26,4 @@ RSpec.describe 'the gigs index page' do
     expect(page).to_not have_content(gig_3.date)
     expect(page).to_not have_content(gig_3.band_name)
   end
-
-  it "clicks link to external page" do
-    visit "/gigs"
-    click_link("Trains and Dreams Music Link")
-    expect(current_path).to eq("/fakemusic.com")
-  end
-
 end
