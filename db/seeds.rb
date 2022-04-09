@@ -8,3 +8,5 @@ Federal & 52, 38th and Irving, Sloan's Lake.
 The Arvada Taco Bell near the Wadsworth Bypass is functioning nominally.
 LOL(lots of love!),
 Golden Bullfrog", title: "Hi, and Taco Bell", subject: "Fine Dining")
+
+admin_1 = Admin.create!(username: 'chris_2', password: 'bbbb')

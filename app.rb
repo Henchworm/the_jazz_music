@@ -8,8 +8,11 @@ require_relative 'models/blarg'
 require_relative 'models/admin'
 
 
+
 class TheJazzMusicApp < Sinatra::Base
   register Sinatra::ActiveRecordExtension
+  enable :sessions
+
 
   get '/' do
     erb :"public/welcome"
@@ -46,37 +49,75 @@ class TheJazzMusicApp < Sinatra::Base
     redirect to gig.music_link
   end
 
+  #ADMIN
+  post '/admin/login' do
+    admin = Admin.find_by(username: params[:username])
+    if admin.authenticate(params[:password])
+      session[:admin_id] = admin.id
+      redirect 'admin/dashboard'
+    else
+      redirect 'admin/login'
+    end
+  end
 
+  get '/admin/dashboard' do
+    admin = Admin.find(session[:admin_id]) if session[:admin_id]
+    if admin.present?
+      erb :"admin/admin_dashboard"
+    else
+      redirect 'admin/login'
+    end
+  end
 
   get '/admin/gigs' do
-    @gigs = Gig.all
-    erb :"admin/admin_index"
+    admin = Admin.find(session[:admin_id]) if session[:admin_id]
+    if admin.present?
+      @gigs = Gig.all
+      erb :"admin/admin_index"
+    else
+      erb :"admin/admin_login"
+    end
   end
 
   get '/admin/gigs/new' do
-    erb :"admin/admin_new"
+    admin = Admin.find(session[:admin_id]) if session[:admin_id]
+    if admin.present?
+      erb :"admin/admin_new"
+    else
+      erb :"admin/admin_login"
+    end
   end
 
   get '/admin/gigs/:id' do
-    @gig = Gig.find(params[:id])
-    erb :"/admin/admin_show"
+    admin = Admin.find(session[:admin_id]) if session[:admin_id]
+    if admin.present?
+      @gig = Gig.find(params[:id])
+      erb :"/admin/admin_show"
+    else
+      erb :"admin/admin_login"
+    end
   end
 
   get '/admin/gigs/:id/edit' do
-    @gig = Gig.find(params[:id])
-    erb :"/admin/admin_edit"
+    admin = Admin.find(session[:admin_id]) if session[:admin_id]
+    if admin.present?
+      @gig = Gig.find(params[:id])
+      erb :"/admin/admin_edit"
+    else
+      erb :"admin/admin_login"
+    end
   end
 
   post '/admin/gigs/:id/edit' do
-    gig = Gig.find(params[:id])
-    gig.update(
-      date: DateTime.strptime(params[:date], '%m/%d/%Y'),
-      venue: params[:venue],
-      band_name: params[:band_name],
-      deets: params[:deets],
-      music_link: params[:music_link]
-    )
-    redirect '/admin/gigs'
+      gig = Gig.find(params[:id])
+      gig.update(
+        date: DateTime.strptime(params[:date], '%m/%d/%Y'),
+        venue: params[:venue],
+        band_name: params[:band_name],
+        deets: params[:deets],
+        music_link: params[:music_link]
+      )
+      redirect '/admin/gigs'
   end
 
   post '/admin/gigs/:id/destroy' do
@@ -96,12 +137,22 @@ class TheJazzMusicApp < Sinatra::Base
   end
 
   get '/admin/blargs' do
-    @blargs = Blarg.all
-    erb :"/admin/admin_blargs"
+    admin = Admin.find(session[:admin_id]) if session[:admin_id]
+    if admin.present?
+      @blargs = Blarg.all
+      erb :"/admin/admin_blargs"
+    else
+      erb :"admin/admin_login"
+    end
   end
 
   get '/admin/blargs/new' do
-    erb :"/admin/blarg_new"
+    admin = Admin.find(session[:admin_id]) if session[:admin_id]
+    if admin.present?
+      erb :"/admin/blarg_new"
+    else
+      erb :"admin/admin_login"
+    end
   end
 
   post '/admin/blargs/create' do

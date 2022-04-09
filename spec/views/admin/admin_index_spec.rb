@@ -3,6 +3,9 @@ RSpec.describe 'the admin gigs index page' do
   let!(:gig_1) {Gig.create!(date: Time.new(2022, 10, 10), band_name: "Trains and Dreams",venue: "Lion's Lair", deets: "21+", music_link: "fakemusic.com")}
   let!(:gig_2) {Gig.create!(date: Time.new(2022, 10, 30), band_name: "Brains and Creams",venue: "Lion's Lair", deets: "21+", music_link: "falsemusic.com")}
   let!(:gig_3) {Gig.create!(date: Time.new(2018, 10, 30), band_name: "Dead Ancient Band",venue: "Lion's Lair", deets: "21+", music_link: "notrealmusic.com")}
+  let!(:admin_1) {Admin.create!(username: 'billy', password:'rocks')}
+
+  describe "logged in paths" do
 
   it "has a link to create a gig" do
     visit "/admin/gigs"
@@ -38,4 +41,5 @@ RSpec.describe 'the admin gigs index page' do
     click_link ("View Gig ##{gig_1.id}")
     expect(current_path).to eq("/admin/gigs/#{gig_1.id}")
   end
+end
 end
