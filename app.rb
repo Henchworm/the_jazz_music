@@ -6,13 +6,9 @@ require "sinatra/activerecord"
 require_relative 'models/gig'
 require_relative 'models/blarg'
 require_relative 'models/admin'
-
-
-
 class TheJazzMusicApp < Sinatra::Base
   register Sinatra::ActiveRecordExtension
   enable :sessions
-
 
   get '/' do
     erb :"public/welcome"
@@ -41,7 +37,9 @@ class TheJazzMusicApp < Sinatra::Base
 
   get '/gigs' do
     @gigs = Gig.all
-    @emojis = ["🤖 ", "👽", " ⚡️",  "✨", " 🦑 ", "🦴"]
+    @emojis = ["🤖","👽","⚡️","✨","🦑 ","🦴","🫀","🫁",
+              "🧠","👳","👳🏼","👳",‍"🐈","🪶","🐓","🦃","🦤",
+              "🦚","🦜","🐲", "🌵" "🎄"]
     erb :"public/gig_index"
   end
 
