@@ -85,7 +85,7 @@
         text-shadow: blue 2px 3px;
         padding: 15px">Upcoming Gigs for <%= Time.now.year %></h1>
   <% @gigs.order_soonest.each do |gig| %>
-  <h2><%= @emojis.sample + " " + gig.band_name + " " +@emojis.sample%> </h2>
+  <h2><%= @emojis.sample + @emojis.sample + " " + gig.band_name + " " +@emojis.sample + @emojis.sample%> </h2>
   <p>Date: <span><%=gig.date.strftime('%m/%d/%Y') %></span></p>
   <p>Venue: <%=gig.venue%></p>
   <p>Deets: <%=gig.deets%></p>
