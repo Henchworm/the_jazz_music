@@ -4,6 +4,6 @@ class Admin < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :password_digest
       t.timestamps
-    end 
+    end
   end
 end

@@ -10,34 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_09_221544) do
-
+ActiveRecord::Schema.define(version: 20_220_409_221_544) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "admins", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'admins', force: :cascade do |t|
+    t.string 'username'
+    t.string 'password_digest'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "blargs", force: :cascade do |t|
-    t.string "title"
-    t.string "subject"
-    t.text "text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'blargs', force: :cascade do |t|
+    t.string 'title'
+    t.string 'subject'
+    t.text 'text'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "gigs", force: :cascade do |t|
-    t.datetime "date"
-    t.string "venue"
-    t.string "band_name"
-    t.text "deets"
-    t.string "music_link"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'gigs', force: :cascade do |t|
+    t.datetime 'date'
+    t.string 'venue'
+    t.string 'band_name'
+    t.text 'deets'
+    t.string 'music_link'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
-
 end
